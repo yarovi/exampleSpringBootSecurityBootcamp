@@ -3,3 +3,14 @@ spring:
     user:
       name: yasmani
       password: 123
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/exampledb
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update     # para desarrollo; en producción usar migrations
+    show-sql: true
