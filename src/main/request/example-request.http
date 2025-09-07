@@ -1,0 +1,7 @@
+GET localhost:8080/api
+
+###
+GET localhost:8080/api/user
+###
+GET localhost:8080/api/admin
+###
