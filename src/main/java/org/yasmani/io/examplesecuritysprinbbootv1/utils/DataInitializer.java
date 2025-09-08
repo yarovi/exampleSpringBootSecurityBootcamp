@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 import org.yasmani.io.examplesecuritysprinbbootv1.entity.UserEntity;
 import org.yasmani.io.examplesecuritysprinbbootv1.repository.UserRepository;
 
+import java.util.Arrays;
+
 @Component
 public class DataInitializer implements CommandLineRunner {
 
@@ -20,13 +22,13 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) {
         if (repo.findByUsername("ana").isEmpty()) {
-            repo.save(new UserEntity("ana", encoder.encode("123"), "ADMIN", true));
+            repo.save(new UserEntity("ana", encoder.encode("123"), Arrays.asList("ADMIN"), true));
         }
         if (repo.findByUsername("user").isEmpty()) {
-            repo.save(new UserEntity("user", encoder.encode("password"), "USER", true));
+            repo.save(new UserEntity("user", encoder.encode("password"), Arrays.asList("USER"), true));
         }
         if (repo.findByUsername("pepe").isEmpty()) {
-            repo.save(new UserEntity("pepe", encoder.encode("123"), "SELLER", true));
+            repo.save(new UserEntity("pepe", encoder.encode("123"), Arrays.asList("SELLER"), true));
         }
     }
 }

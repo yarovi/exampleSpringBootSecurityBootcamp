@@ -14,3 +14,7 @@ spring:
     hibernate:
       ddl-auto: update     # para desarrollo; en producción usar migrations
     show-sql: true
+
+app:
+  jwt:
+    secret: "01234567890123456789012345678901"
